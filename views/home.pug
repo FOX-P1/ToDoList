@@ -1,0 +1,27 @@
+include todo.pug
+
+doctype html
+html(lang="ko")
+    head   
+        title #{pageTitle} | #{siteName}
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    body
+        h1 ToDo List
+        //- 할일 창 + 넣기 버튼 &이벤트 리스너
+        div.todo__arrays
+            form(method="POST")
+                input(type="text", name="todoThing", placeholder="Write todo")
+                input(type="submit", Value="add todo")
+                div
+                    each todoThing in todos
+                        +todoThing(todoThing)
+                    else
+                        span.empty__message Nothing found
+    script(src="/client/js/todoSection.js")
+            //- ul
+            //-     each todo in todos.reverse()
+            //-         li.todo__array
+            //-             i.fas.fa-comment
+            //-             | #{todo.todo}
+            //-     else
+            //-         span.empty__message No todos found 

@@ -1,0 +1,5 @@
+mixin todoThing(todoThing)
+    div
+        input(type="checkbox", name="select", id=`${todoThing.id}`, `${todoThing.check}`)
+        span #{todoThing.todoThing}
+        a(href=`/${todoThing.id}/delete`) 🗑
